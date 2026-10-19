@@ -1,7 +1,7 @@
 [
   {
     "target_name": "nice_nano-corne_left",
-    "setup_cmd": "west init -l app",
+    "setup_cmd": "west init -l . --mf app/west.yml",
     "build_cmd": "west update --fetch-opt=--filter=tree:0 && west zephyr-export && west build -s app -d build/nice_nano-corne_left -p -b nice_nano//zmk -- -DSHIELD=corne_left",
     "elf": "build/nice_nano-corne_left/zephyr/zmk.elf",
     "ld": "build/nice_nano-corne_left/zephyr/linker.cmd",
@@ -10,7 +10,7 @@
   },
   {
     "target_name": "nice_nano-corne_right",
-    "setup_cmd": "west init -l app",
+    "setup_cmd": "west init -l . --mf app/west.yml",
     "build_cmd": "west update --fetch-opt=--filter=tree:0 && west zephyr-export && west build -s app -d build/nice_nano-corne_right -p -b nice_nano//zmk -- -DSHIELD=corne_right",
     "elf": "build/nice_nano-corne_right/zephyr/zmk.elf",
     "ld": "build/nice_nano-corne_right/zephyr/linker.cmd",
@@ -19,7 +19,7 @@
   },
   {
     "target_name": "seeeduino_xiao-hummingbird",
-    "setup_cmd": "west init -l app",
+    "setup_cmd": "west init -l . --mf app/west.yml",
     "build_cmd": "west update --fetch-opt=--filter=tree:0 && west zephyr-export && west build -s app -d build/seeeduino_xiao-hummingbird -p -b seeeduino_xiao//zmk -- -DSHIELD=hummingbird",
     "elf": "build/seeeduino_xiao-hummingbird/zephyr/zmk.elf",
     "ld": "build/seeeduino_xiao-hummingbird/zephyr/linker.cmd",
@@ -28,7 +28,7 @@
   },
   {
     "target_name": "rp2040-reviung41",
-    "setup_cmd": "west init -l app",
+    "setup_cmd": "west init -l . --mf app/west.yml",
     "build_cmd": "west update --fetch-opt=--filter=tree:0 && west zephyr-export && west build -s app -d build/rp2040-reviung41 -p -b sparkfun_pro_micro_rp2040//zmk -- -DSHIELD=reviung41",
     "elf": "build/rp2040-reviung41/zephyr/zmk.elf",
     "ld": "build/rp2040-reviung41/zephyr/linker.cmd",
@@ -37,7 +37,7 @@
   },
   {
     "target_name": "nice_nano-reviung41-studio",
-    "setup_cmd": "west init -l app",
+    "setup_cmd": "west init -l . --mf app/west.yml",
     "build_cmd": "west update --fetch-opt=--filter=tree:0 && west zephyr-export && west build -s app -d build/nice_nano-reviung41-studio -p -S studio-rpc-usb-uart -b nice_nano//zmk -- -DSHIELD=reviung41 -DCONFIG_ZMK_STUDIO=y",
     "elf": "build/nice_nano-reviung41-studio/zephyr/zmk.elf",
     "ld": "build/nice_nano-reviung41-studio/zephyr/linker.cmd",
@@ -46,7 +46,7 @@
   },
   {
     "target_name": "nice_nano-kyria_left-display",
-    "setup_cmd": "west init -l app",
+    "setup_cmd": "west init -l . --mf app/west.yml",
     "build_cmd": "west update --fetch-opt=--filter=tree:0 && west zephyr-export && west build -s app -d build/nice_nano-kyria_left-display -p -b nice_nano//zmk -- -DSHIELD=kyria_left -DCONFIG_ZMK_DISPLAY=y",
     "elf": "build/nice_nano-kyria_left-display/zephyr/zmk.elf",
     "ld": "build/nice_nano-kyria_left-display/zephyr/linker.cmd",
@@ -55,7 +55,7 @@
   },
   {
     "target_name": "proton_c-clueboard_california",
-    "setup_cmd": "west init -l app",
+    "setup_cmd": "west init -l . --mf app/west.yml",
     "build_cmd": "west update --fetch-opt=--filter=tree:0 && west zephyr-export && west build -s app -d build/proton_c-clueboard_california -p -b proton_c//zmk -- -DSHIELD=clueboard_california",
     "elf": "build/proton_c-clueboard_california/zephyr/zmk.elf",
     "ld": "build/proton_c-clueboard_california/zephyr/linker.cmd",

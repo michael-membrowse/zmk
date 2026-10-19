@@ -54,6 +54,9 @@ jobs:
       - name: Install pip for the MemBrowse action
         run: apt-get update -qq && apt-get install -y -qq --no-install-recommends python3-pip
 
+      # The west workspace is created one level above the checkout (see
+      # setup_cmd) so that the per-commit `git clean -fdx` done by the
+      # onboard action does not wipe .west/, zephyr/ and modules/.
       - name: Install packages
         run: ${{ matrix.setup_cmd }}
 

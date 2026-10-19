@@ -55,22 +55,9 @@ jobs:
       - name: Install pip for the MemBrowse action
         run: apt-get update -qq && apt-get install -y -qq --no-install-recommends python3-pip
 
-      - name: Cache west modules
-        uses: actions/cache@v4
-        env:
-          cache-name: cache-zephyr-modules
-        with:
-          path: |
-            modules/
-            tools/
-            zephyr/
-            bootloader/
-          key: ${{ runner.os }}-membrowse-${{ env.cache-name }}-${{ hashFiles('app/west.yml') }}
-          restore-keys: |
-            ${{ runner.os }}-membrowse-${{ env.cache-name }}-
-        timeout-minutes: 2
-        continue-on-error: true
-
+      # The west workspace is created one level above the checkout (see
+      # setup_cmd) so that per-commit `git clean -fdx` in the onboard
+      # action does not wipe .west/, zephyr/ and modules/.
       - name: Install packages
         run: ${{ matrix.setup_cmd }}
 
