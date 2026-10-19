@@ -34,6 +34,10 @@ jobs:
     # Python comes from the container, so no actions/setup-python step here.
     container:
       image: docker.io/zmkfirmware/zmk-build-arm:4.1
+    env:
+      # The image's Python is "externally managed" (PEP 668); let the
+      # MemBrowse action pip-install itself into it.
+      PIP_BREAK_SYSTEM_PACKAGES: "1"
     strategy:
       fail-fast: false
       matrix:
@@ -47,6 +51,9 @@ jobs:
 
       - name: Trust workspace
         run: git config --global --add safe.directory '*'
+
+      - name: Install pip for the MemBrowse action
+        run: apt-get update -qq && apt-get install -y -qq --no-install-recommends python3-pip
 
       - name: Cache west modules
         uses: actions/cache@v4
